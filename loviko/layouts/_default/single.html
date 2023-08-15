@@ -1,0 +1,26 @@
+
+{{ define "main" }}
+<main style="background-color: rgb(248, 248, 248);; color: rgb(56, 52, 52); padding-top: 5em; font-family: segoe UI; font-size: 22px; " >
+   <content  style="float: 0 none; padding: 20px; height: fit-content; background-color:rgb(248, 248, 248);">
+    <section>
+        <h1 style="color:rgb(31, 29, 29); text-align: left; font-family: Arial; font-size: 3.5rem;">{{ .Title }}</h1>
+        {{ if isset .Params "show_date" | and (eq .Params.show_date false) }}
+        {{ else }}
+        <p style="color:rgb(51, 46, 46); margin-top: -2rem; margin-bottom: 1.5rem;
+        font-size: 20px; font-weight: 500;">{{ .Date.Format "January 02, 2006" }}</p>
+        {{ end }}
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-github"></i>
+        <br>
+        <br>
+        <br>
+    
+    </section>
+
+    {{ .Content }}
+</content>
+
+</main>
+{{ end }}
+

@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<html>
+    <head>
+        <title>Postingan</title>
+        <style>
+            li:hover a {
+  text-decoration: none;
+  background-color: #ecebeb;
+  color: white;
+}
+        </style>
+    </head>
+
+    <body>
+        <section style="padding-top: 120px;">
+            <h1>Postingan</h1>
+        
+            <ul>
+                {{ range .Pages.ByPublishDate.Reverse }}
+                <li style="padding-top: 5px; font-size: 20px;"><a  class="alink" style="text-decoration: none; color: black;" href="{{ .RelPermalink }}">{{ .Title }}, {{ .Date.Format "January 02, 2006" }}</a></li>
+                
+                {{ end }}
+        
+            </ul>
+            
+         </section>
+    </body>
+</html>
+
+ 
+
+{{ end }}

@@ -1,0 +1,10 @@
+<section style="padding-top: 20px;">
+    <h1>Latest Posts</h1>
+    <div >
+        {{ range first 6 (where .Site.RegularPages.ByDate.Reverse "Type" "blogs") }}
+        <p style="padding-left: 2em;"><a href="{{ .RelPermalink }}" style="color: black;;">
+            {{ .Title }}, <span > {{ .Date.Format "2006-01-02" }}</span>
+        </a><br></p>
+        {{ end }}
+    </div>
+</section>
